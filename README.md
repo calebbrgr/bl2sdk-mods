@@ -4,4 +4,4 @@
 ### [CrossSkillModifier](CrossSkillModifier)
 - Adds the ability to customize character skill trees with any skill in the game.
 
-![skill tree](/CrossSkillModifier/screenshot.png)
+ <img src="/CrossSkillModifier/screenshot.png" width="523" height="328">
