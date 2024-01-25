@@ -10,12 +10,12 @@ from Mods.ModMenu import Game, Hook
 
 
 class CrossSkillModifier(BL2MOD):
+    # Fork of Cross Class Skill Randomizer 1.2 - https://github.com/bl-sdk/PythonSDK/blob/master/Mods/SkillRandomizer/__init__.py
+    # Special thanks to Abahbob + Others for doing a large ammount of heavy lifting!
     Name: str = "Cross Class Skill Modifier"
     Description: str = "Modify all the skills!"
     Version: str = "1.0"
-    # Fork of Cross Class Skill Randomizer 1.2 - https://github.com/bl-sdk/PythonSDK/blob/master/Mods/SkillRandomizer/__init__.py
     Author: str = "Cal"
-    # Special thanks to Abahbob + Others for doing a large ammount of heavy lifting!
     SupportedGames = Game.BL2
     LocalModDir: str = os.path.dirname(os.path.realpath(__file__))
 
@@ -57,10 +57,11 @@ class CrossSkillModifier(BL2MOD):
             [["GD_Assassin_Skills.Sniping.HeadShot", False, "GD_Mercenary_Skills.Rampage.Inconceivable"], ["GD_Lilac_Skills_Hellborn.Skills.BurnBabyBurn", False, "GD_Lilac_Skills_Hellborn.Skills.FuelTheFire"], ["GD_Siren_Skills.Cataclysm.Flicker", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.ElectricalBurn", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.MorePep"], [False, "GD_Siren_Skills.Cataclysm.Reaper", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.EvilEnchantress"], [False, "GD_Assassin_Skills.Sniping.Killer", False], [False, "GD_Siren_Skills.Cataclysm.CloudKill", False]]
         ]
         # Empty Tree
-        Tree_1 = [[[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]],  # Branch 1 - e.g. (Maya - Motion)
-                  [[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]],  # Branch 2 - e.g. (Maya - Harmony)
-                  [[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]]  # Branch 3 - e.g. (Maya - Cataclysm)
-                  ]
+        Tree_1 = [
+            [[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]],  # Branch 1 - e.g. (Maya - Motion)
+            [[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]],  # Branch 2 - e.g. (Maya - Harmony)
+            [[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]]   # Branch 3 - e.g. (Maya - Cataclysm)
+        ]
 
 
         CurrentTree = Tree_0[iteration] # Modify this if you want to use a different Skill Tree e.g. CurrentTree = Tree_1[iteration]
