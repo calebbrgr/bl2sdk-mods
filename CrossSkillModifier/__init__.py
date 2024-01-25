@@ -15,7 +15,7 @@ class CrossSkillModifier(BL2MOD):
     Version: str = "1.0"
     # Fork of Cross Class Skill Randomizer 1.2 - https://github.com/bl-sdk/PythonSDK/blob/master/Mods/SkillRandomizer/__init__.py
     Author: str = "Cal"
-    # Special thanks to Abahbob for doing a large ammount of heavy lifting! gh: https://github.com/FromDarkHell
+    # Special thanks to Abahbob + Others for doing a large ammount of heavy lifting!
     SupportedGames = Game.BL2
     LocalModDir: str = os.path.dirname(os.path.realpath(__file__))
 
@@ -49,27 +49,26 @@ class CrossSkillModifier(BL2MOD):
     def DefineTree(self, SkillTreeBranchDef, iteration) -> None:
         self.PreloadPackages()
         #### Modify here
+
+        # What I am currently playing w/ siren
         Tree_0 = [
-            [["GD_Siren_Skills.Motion.Ward", False, "GD_Siren_Skills.Motion.Accelerate"], ["GD_Siren_Skills.Motion.Suspension", False, "GD_Tulip_Mechromancer_Skills.BestFriendsForever.CloseEnough"], ["GD_Siren_Skills.Motion.Fleet", "GD_Siren_Skills.Motion.Converge", "GD_Assassin_Skills.Bloodshed.LikeTheWind"], [False, "GD_Siren_Skills.Motion.Quicken", False], [False, "GD_Siren_Skills.Motion.SubSequence", False], [False, "GD_Siren_Skills.Cataclysm.Ruin", False]],
-            [["GD_Siren_Skills.Harmony.MindsEye", False, "GD_Siren_Skills.Harmony.SweetRelease"], ["GD_Mercenary_Skills.Rampage.Inconceivable", False, "GD_Siren_Skills.Harmony.Wreck"], ["GD_Soldier_Skills.Survival.HealthY", "GD_Siren_Skills.Harmony.Res", "GD_Siren_Skills.Harmony.LifeTap"], ["GD_Soldier_Skills.Guerrilla.Willing", "GD_Soldier_Skills.Guerrilla.Able", False], [False, "GD_Soldier_Skills.Survival.Grit", False], [False, "GD_Siren_Skills.Harmony.Scorn", False]],
-            [["GD_Siren_Skills.Cataclysm.Flicker", False, "GD_Siren_Skills.Cataclysm.Foresight"], ["GD_Siren_Skills.Cataclysm.Immolate", False, "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.WiresDontTalk"], ["GD_Siren_Skills.Cataclysm.ChainReaction", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.MorePep", "GD_Tulip_Mechromancer_Skills.EmbraceChaos.TheNthDegree"], [False, "GD_Siren_Skills.Cataclysm.Reaper", "GD_Assassin_Skills.Sniping.Bore"], [False, "GD_Assassin_Skills.Sniping.Killer", False], [False, "GD_Siren_Skills.Cataclysm.CloudKill", False]]
-        ]
-        Tree_1 = [
-            [["GD_Siren_Skills.Motion.Ward", False, "GD_Siren_Skills.Motion.Accelerate"], ["GD_Siren_Skills.Motion.Suspension", False, "GD_Siren_Skills.Cataclysm.ChainReaction"], ["GD_Soldier_Skills.Guerrilla.Onslaught", "GD_Siren_Skills.Motion.Converge", "GD_Assassin_Skills.Bloodshed.LikeTheWind"], [False, "GD_Siren_Skills.Motion.Quicken", False], ["GD_Tulip_Mechromancer_Skills.BestFriendsForever.CloseEnough", "GD_Siren_Skills.Motion.SubSequence", False], [False, "GD_Siren_Skills.Cataclysm.Ruin", False]],
+            [["GD_Siren_Skills.Cataclysm.Backdraft", False, "GD_Siren_Skills.Motion.Accelerate"], ["GD_Siren_Skills.Motion.Suspension", False, "GD_Siren_Skills.Cataclysm.ChainReaction"], ["GD_Soldier_Skills.Guerrilla.Onslaught", "GD_Siren_Skills.Motion.Converge", "GD_Assassin_Skills.Bloodshed.LikeTheWind"], [False, "GD_Siren_Skills.Motion.Quicken", False], ["GD_Tulip_Mechromancer_Skills.BestFriendsForever.CloseEnough", "GD_Siren_Skills.Motion.SubSequence", False], [False, "GD_Siren_Skills.Cataclysm.Ruin", False]],
             [["GD_Siren_Skills.Harmony.MindsEye", False, "GD_Siren_Skills.Harmony.Wreck"], ["GD_Assassin_Skills.Cunning.Fearless", False, "GD_Lilac_Skills_Hellborn.Skills.NumbedNerves"], ["GD_Soldier_Skills.Survival.HealthY", "GD_Siren_Skills.Harmony.Res", "GD_Lilac_Skills_Hellborn.Skills.ElementalEmpathy"], [False, "GD_Soldier_Skills.Guerrilla.Able", "GD_Lilac_Skills_Hellborn.Skills.FlameFlare"], [False, "GD_Soldier_Skills.Survival.Grit", False], [False, "GD_Siren_Skills.Harmony.Scorn", False]],
-            [["GD_Assassin_Skills.Sniping.HeadShot", False, "GD_Mercenary_Skills.Rampage.Inconceivable"], ["GD_Lilac_Skills_Hellborn.Skills.BurnBabyBurn", False, "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.WiresDontTalk"], ["GD_Siren_Skills.Cataclysm.Flicker", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.ElectricalBurn", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.MorePep"], [False, "GD_Siren_Skills.Cataclysm.Reaper", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.EvilEnchantress"], [False, "GD_Assassin_Skills.Sniping.Killer", False], [False, "GD_Siren_Skills.Cataclysm.CloudKill", False]]
+            [["GD_Assassin_Skills.Sniping.HeadShot", False, "GD_Mercenary_Skills.Rampage.Inconceivable"], ["GD_Lilac_Skills_Hellborn.Skills.BurnBabyBurn", False, "GD_Lilac_Skills_Hellborn.Skills.FuelTheFire"], ["GD_Siren_Skills.Cataclysm.Flicker", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.ElectricalBurn", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.MorePep"], [False, "GD_Siren_Skills.Cataclysm.Reaper", "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.EvilEnchantress"], [False, "GD_Assassin_Skills.Sniping.Killer", False], [False, "GD_Siren_Skills.Cataclysm.CloudKill", False]]
         ]
         # Empty Tree
-        Tree_3 = [[[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]], # Branch 1 - e.g. (Maya - Motion)
-                  [[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]], # Branch 2 - e.g. (Maya - Harmony)
+        Tree_1 = [[[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]],  # Branch 1 - e.g. (Maya - Motion)
+                  [[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]],  # Branch 2 - e.g. (Maya - Harmony)
                   [[False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False], [False, False, False]]  # Branch 3 - e.g. (Maya - Cataclysm)
-        ]
+                  ]
 
 
-        CurrentTree = Tree_1[iteration] # Modify this if you want to use a different Skill Tree e.g. CurrentTree = Tree_3[iteration]
+        CurrentTree = Tree_0[iteration] # Modify this if you want to use a different Skill Tree e.g. CurrentTree = Tree_1[iteration]
 
         #### End Modification
 
+        HasBloodlust = False
+        HasHellborn = False
         for Tier in range(6):
             CurrentTier = CurrentTree[Tier]
             NewSkills = []
@@ -80,6 +79,26 @@ class CrossSkillModifier(BL2MOD):
                     SkillDef = unrealsdk.FindObject("SkillDefinition", CurrentSkill)
                     MaxPoints += SkillDef.MaxGrade
                     NewSkills.append(SkillDef)
+                    HasHellborn = HasHellborn or "Hellborn" in SkillDef.GetFullName()
+                    if not HasBloodlust and SkillDef.GetName() in ["BloodfilledGuns", "BloodyTwitch"]:
+                        HasBloodlust = True
+
+            if HasBloodlust:
+                NewSkills.append(unrealsdk.FindObject("SkillDefinition", "GD_Lilac_Skills_Bloodlust.Skills._Bloodlust"))
+            if HasHellborn:
+                NewSkills.append(
+                    unrealsdk.FindObject(
+                    "SkillDefinition",
+                    "GD_Lilac_Skills_Hellborn.Skills.FireStatusDetector",
+                    )
+                )
+                NewSkills.append(
+                    unrealsdk.FindObject(
+                    "SkillDefinition",
+                    "GD_Lilac_Skills_Hellborn.Skills.AppliedStatusEffectListener",
+                    )
+                )
+
             bool_array = [bool(value) for value in CurrentTier]
             SkillTreeBranchDef.Layout.Tiers[Tier].bCellIsOccupied = bool_array
             SkillTreeBranchDef.Tiers[Tier].Skills = NewSkills
